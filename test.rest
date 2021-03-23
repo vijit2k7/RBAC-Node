@@ -1,0 +1,7 @@
+PUT http://localhost:3000/2
+Content-Type: application/json
+
+{
+    "role":[true,true,true],
+    "userId":2
+}
