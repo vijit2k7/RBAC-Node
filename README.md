@@ -57,6 +57,14 @@ Run npm start or node server for a running development server. Navigate to http:
     
   - **Updating a Role(Only admin users can do this / PUT http://localhost:3000/id)**-
        
+       Failure Scenario(When the id entered is not present in the db or the user is not admin)-
+       ![Uploading image.png…]()
+
+       
+       Success Scenario-
+       ![image](https://user-images.githubusercontent.com/22290406/112701146-dba23e80-8eb5-11eb-860e-77e2c5a6262a.png)
+
+
 
    - **Fetching Open/Close Tickets** - through this api we can fetch the closed as well as the open tickets just by passing true/false in request params
         localhost:3000/api/tickets/true
