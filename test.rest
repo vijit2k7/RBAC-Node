@@ -1,7 +1,8 @@
-PUT http://localhost:3000/2
+POST http://localhost:3000/
 Content-Type: application/json
 
 {
-    "role":[true,true,true],
-    "userId":2
+    "userId":1,
+    "role":"somebody",
+    "name":"Vijit"
 }

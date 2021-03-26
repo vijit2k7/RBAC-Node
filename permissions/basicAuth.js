@@ -8,16 +8,15 @@ function authUser(req,res,next){
     next()
 }
 
-function authRole(role)
-{
-    let middlewareNew=(req,res,next)=>{
-        if(req.user.role!=role)
+
+function adminAuth(req,res,next){
+        if(!req.user.role[3].admin)
             return res.status(401).send('Unauthorised')
         
         next();
-    }
-    return middlewareNew
+
 }
+
 function validateRole(role)
 {
     console.log("ssssssssssssss",Array.isArray(role),role.length)
@@ -37,6 +36,6 @@ function validateRole(role)
 
 module.exports={
     authUser,
-    authRole,
+    adminAuth,
     validateRole
 }

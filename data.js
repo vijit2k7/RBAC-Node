@@ -1,7 +1,7 @@
 const ROLE = {
-  admin: [true,true,true],
-  user:[true,true,false],
-  guest:[true,false,false] //read-only access
+  admin: [true,true,true,{admin:true}],
+  user:[true,true,false,{admin:false}],
+  guest:[true,false,false,{admin:false}] //read-only access
 }
 
 module.exports = {

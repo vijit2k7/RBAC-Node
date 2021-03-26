@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {  ROLE } = require('../data')
-const {authUser,authRole} = require('../permissions/basicAuth');
+const {authUser} = require('../permissions/basicAuth');
 const {authProject,postProject}=require('../permissions/projectPermission');
 var Storage = require('node-storage');
 var store = new Storage('./dataNew');
