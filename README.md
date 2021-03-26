@@ -20,17 +20,12 @@ Run npm start or node server for a running development server. Navigate to http:
 
 ## App WorkFlow
 **.Step by step Workflow for setting up the whole app on local or cloud server:**
-  - **Register an admin user** db in mongodb by running the register user service(First create an admin user) using the following api-
-    http://localhost:3000/api/users
-    Req Eg-{
-            "name":"Vijit Mishra",
-            "phone":"9013523717",
-            "email":"sachin2k7@yahoo.in",
-            "password":"abcde",
-            "isAdmin": "true"
-           }
-    In the response you will recieve a jwt authentication token just copy it and save it for further requirement.
-  *Note You can register other users as well but you need to save the jwt token for each* 
+  - **Home Page** 
+      Since for homepage no authentication is needed so any user can just visit http://localhost:3000/ and can access the homepage.
+      Rest Client Output-
+      ![image](https://user-images.githubusercontent.com/22290406/112695975-fc18cb80-8eaa-11eb-8ead-8ad665dd9dfa.png)
+
+
   - **Register other users**- Using the api http://localhost:3000/api/users we can register other user by keeping the **isAdmin Flag as false**
   - **Authenticating Registered users** - Now we will need to authenticate users based on the token recieved earlier which can be done by the following api-
       http://localhost:3000/api/auth
