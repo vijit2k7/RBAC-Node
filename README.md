@@ -58,7 +58,7 @@ Run npm start or node server for a running development server. Navigate to http:
   - **Updating a Role(Only admin users can do this / PUT http://localhost:3000/id)**-
        
        Failure Scenario(When the id entered is not present in the db or the user is not admin)-
-       ![Uploading image.png…]()
+       ![image](https://user-images.githubusercontent.com/22290406/112701401-861a6180-8eb6-11eb-8508-dbefa618cb8b.png)
 
        
        Success Scenario-
