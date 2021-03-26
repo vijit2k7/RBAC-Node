@@ -20,32 +20,44 @@ Run npm start or node server for a running development server. Navigate to http:
 
 ## App WorkFlow
 **.Step by step Workflow for setting up the whole app on local or cloud server:**
-  - **Home Page** 
+  - **Home Page(http://localhost:3000/)** 
       Since for homepage no authentication is needed so any user can just visit http://localhost:3000/ and can access the homepage.
       Rest Client Output-
       ![image](https://user-images.githubusercontent.com/22290406/112695975-fc18cb80-8eaa-11eb-8ead-8ad665dd9dfa.png)
 
 
-  - **Register other users**- Using the api http://localhost:3000/api/users we can register other user by keeping the **isAdmin Flag as false**
-  - **Authenticating Registered users** - Now we will need to authenticate users based on the token recieved earlier which can be done by the following api-
-      http://localhost:3000/api/auth
-      Req Eg-{
-	             "email":"sam2k7@gmail.in",
-	             "password":"abcde"
-             }
-  
-  - **First create a tickets db** by running the tickets api to post all 40 tickets for a particular bus(Now u have all 40 tickets which are open in db)
-    http://localhost:3000/api/tickets/all
-  - **Booking a Ticket** is done by the api- (localhost:3000/api/bookings)
-     Req Eg- 
-         {
-          "passFirstName": "Sam",
-             "passLastName": "Fischer",
-             "passPhoneNumber": "9013523717",
-             "passEmail":"sam2k7@gmail.com",
-             "seatNumber": 2,
-             "seatType":"AC"
-         }
+  - **Authentication Checks(http://localhost:3000/admin)**- None of the further pages can be accessed unless the right authentication is not provided which in this case is 		provided by userId.
+      	Rest Client Eg- If a user tries to access to access the above page without correct userId(Correct user id for admin is 1)
+	![image](https://user-images.githubusercontent.com/22290406/112696701-52d2d500-8eac-11eb-80dc-8422aaebc0a1.png)
+	
+	
+  - **Authorisation Checks(http://localhost:3000/admin)** - If we are trying to access the admin url without the correct userId(For admin its 1)
+	Failure Scenario-(We get 401 Unauthorised)
+	![image](https://user-images.githubusercontent.com/22290406/112696928-bc52e380-8eac-11eb-9074-8bfd55a63419.png)
+	
+	Success Scenario-(We get all the users with a 200 ok)
+	![image](https://user-images.githubusercontent.com/22290406/112697106-f328f980-8eac-11eb-9073-19ef0014ab26.png)
+
+	
+  - **Posting a new User with his role(POST http://localhost:3000/)** -
+      1.Scenario 1 : When the logged in user is not admin and trying to create a new user.(Admin userId=1)
+      	Rest Client-
+      	![image](https://user-images.githubusercontent.com/22290406/112698168-19e82f80-8eaf-11eb-9e4e-d398e06b006c.png)
+      2.Scenario 2: When the logged in user is admin but the role is invalid(ie not user,guest or admin) or name is shorter than 3 characters.
+      	Rest Client-
+	![image](https://user-images.githubusercontent.com/22290406/112698387-97ac3b00-8eaf-11eb-857c-881227c84a45.png)
+
+      3.Success Scenario-Admin is able to create the right user with specific read,write,delete or admin access.
+      	Rest Client-
+        ![image](https://user-images.githubusercontent.com/22290406/112698969-ddb5ce80-8eb0-11eb-9231-8384ff9d0068.png)
+
+
+    
+    
+    
+  - **Updating a Role(Only admin users can do this / PUT http://localhost:3000/id)**-
+       
+
    - **Fetching Open/Close Tickets** - through this api we can fetch the closed as well as the open tickets just by passing true/false in request params
         localhost:3000/api/tickets/true
    - **Admin Reset all tickets** - through this we can open all the tickets back by changing the status of the tickets as false.
