@@ -78,6 +78,4 @@ Run npm start or node server for a running development server. Navigate to http:
 	![image](https://user-images.githubusercontent.com/22290406/112717065-2e104900-8f10-11eb-9f88-411831c3e046.png)
 
 
-   - **Admin Reset all tickets** - through this we can open all the tickets back by changing the status of the tickets as false.
-       localhost:3000/api/tickets/reset
 
