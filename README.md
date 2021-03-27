@@ -7,6 +7,7 @@
 **NodeJS with Express is used as framework for the development of the application.
 
 ## Database: Node-Local-Storage
+   - This stores the different projects and users and acts as a real time database till the session is active.
 
 
 ## Installation
@@ -20,6 +21,7 @@ Run npm start or node server for a running development server. Navigate to http:
 
 ## App WorkFlow
 **.Step by step Workflow for setting up the whole app on local or cloud server:**
+  NOTE: We have used multiple middlewares to authenticate and authorise different functions and systems
   - **Home Page(http://localhost:3000/)** 
       Since for homepage no authentication is needed so any user can just visit http://localhost:3000/ and can access the homepage.
       Rest Client Output-
@@ -65,9 +67,17 @@ Run npm start or node server for a running development server. Navigate to http:
        ![image](https://user-images.githubusercontent.com/22290406/112701146-dba23e80-8eb5-11eb-860e-77e2c5a6262a.png)
 
 
+## **RESOURCES(Projects) WORKFLOW**
+   - **Fetching the Projects( http://localhost:3000/projects)** - through this api we can fetch the projects according to the user roles-
+   	A) Admin-can fetch all the projects at once
+	B) Other Users- can fetch only the respective projects they have access to
+        
+	
+	![image](https://user-images.githubusercontent.com/22290406/112717055-1933b580-8f10-11eb-9a93-f754da1fcbbf.png)
+	
+	![image](https://user-images.githubusercontent.com/22290406/112717065-2e104900-8f10-11eb-9f88-411831c3e046.png)
 
-   - **Fetching Open/Close Tickets** - through this api we can fetch the closed as well as the open tickets just by passing true/false in request params
-        localhost:3000/api/tickets/true
+
    - **Admin Reset all tickets** - through this we can open all the tickets back by changing the status of the tickets as false.
        localhost:3000/api/tickets/reset
 
