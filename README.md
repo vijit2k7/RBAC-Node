@@ -72,12 +72,11 @@ Run npm start or node server for a running development server. Navigate to http:
    	A) Admin-can fetch all the projects at once
 	B) Other Users- can fetch only the respective projects they have access to
         
-	
-	![image](https://user-images.githubusercontent.com/22290406/112717055-1933b580-8f10-11eb-9a93-f754da1fcbbf.png)
+![image](https://user-images.githubusercontent.com/22290406/112717055-1933b580-8f10-11eb-9a93-f754da1fcbbf.png)
 	
 	Success
 	
-	![image](https://user-images.githubusercontent.com/22290406/112717065-2e104900-8f10-11eb-9f88-411831c3e046.png)
+![image](https://user-images.githubusercontent.com/22290406/112717065-2e104900-8f10-11eb-9f88-411831c3e046.png)
 
 
 
